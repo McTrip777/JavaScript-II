@@ -69,14 +69,17 @@ multiplyNums(1,2,function(element){
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  
-  if (list['item'] === item)
+ let empty = "";
+  for (i=0; i<list.length;i++){
+    if (list[i] === item)
+      empty += 1;
+  }
+  if (empty === '1')
     return cb(true);
   else
     return cb(false);
-  
 }
-contains("Pencil", items, function(element){
+contains("Notebook", items, function(element){
   console.log(element);
 });
 
